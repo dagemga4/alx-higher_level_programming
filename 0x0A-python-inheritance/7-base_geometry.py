@@ -1,24 +1,19 @@
 #!/usr/bin/python3
-"""
-Module: 7-base_geometry
-Public instance method: def area(self): that raises an Exception with the message area() is not implemented
-Public instance method: def integer_validator(self, name, value): that validates  the value
+"""BaseGeometry module.
+Contains a class BaseGeometry, and some methods.
 """
 
 
-class BaseGeometry:
-    """
-    Class with public instance methods.
-    It raises an Exception with the message area() is not implemented
-    """
+class BaseGeometry():
+    """Defines the BaseGeometry class."""
+
     def area(self):
+        """Raises an Exception."""
         raise Exception("area() is not implemented")
-    
+
     def integer_validator(self, name, value):
         """Validates value."""
-
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        
+            raise TypeError(name + " must be an integer")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(name + " must be greater than 0")
